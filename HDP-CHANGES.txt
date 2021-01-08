@@ -1,0 +1,69 @@
+--------------------
+HDP 3.1.5.0 Changes
+--------------------
+
+HIVE-22476: Hive datediff function provided inconsistent results when hive.fetch.task.conversion is set to none
+HIVE-22948: Schematool MergeCatalog
+HIVE-22533: Fix possible LLAP daemon web UI vulnerabilities
+HIVE-13457: Create HS2 REST API endpoints for monitoring information
+HIVE-21902: HiveServer2 UI: jetty response header needs X-Frame-Options
+HIVE-22532: PTFPPD may push limit incorrectly through Rank/DenseRank function
+HIVE-21597: WM trigger validation should happen at the time of create or alter
+HIVE-22497: Remove default value for Capabilities from HiveConf.
+HIVE-21526: JSONDropDatabaseMessage needs to have the full database object
+HIVE-22429: Migrated clustered tables using bucketing_version 1 on hive 3 uses bucketing_version 2 for inserts
+HIVE-21041: NPE, ParseException in getting schema from logical plan
+HIVE-22170: from_unixtime and unix_timestamp should use user session time zone
+HIVE-22332: Hive should ensure valid schema evolution settings since ORC-540
+HIVE-22373: File Merge tasks fail when containers are reused
+HIVE-22232: NPE when hive.order.columnalignment is set to false
+HIVE-18735: Create table like loses transactional attribute
+HIVE-22170: from_unixtime and unix_timestamp should use user session time zone
+HIVE-20113: Shuffle avoidance: Disable 1-1 edges for sorted shuffle
+HIVE-21009: Adding ability for user to set bind user
+HIVE-22331: unix_timestamp without argument returns timestamp in millisecond instead of second
+HIVE-22158: HMS Translation layer::Disallow non-ACID MANAGED tables
+HIVE-22406: TRUNCATE TABLE fails due MySQL limitations on limit value
+HIVE-22291: HMS Translation: Limit translation to hive default catalog only
+HIVE-22360: MultiDelimitSerDe returns wrong results in last column when the loaded file has more columns than those in table schema
+HIVE-22375: ObjectStore.lockNotificationSequenceForUpdate is leaking query in case of error
+HIVE-22336: Updates should be pushed to the Metastore backend DB before creating the notification event
+HIVE-22219: Bringing a node manager down blocks restart of LLAP service
+HIVE-16839: Unbalanced calls to openTransaction/commitTransaction when alter the same partition concurrently
+HIVE-22208: Column name with reserved keyword is unescaped when query including join on table with mask column is re-written
+HIVE-21924: Split text files even if header/footer exists
+HIVE-22273: Access check is failed when a temporary directory is removed
+HIVE-22275: OperationManager.queryIdOperation does not properly clean up multiple queryIds
+HIVE-22120: Fix wrong results/ArrayOutOfBound exception in left outer map joins on specific boundary conditions
+HIVE-22009: CTLV with user specified location is not honoured.
+HIVE-22113: Prevent LLAP shutdown on AMReporter related RuntimeException
+HIVE-22170: from_unixtime and unix_timestamp should use user session time zone
+HIVE-21799: NullPointerException in DynamicPartitionPruningOptimization, when join key is on aggregation column
+HIVE-22121: Turning on hive.tez.bucket.pruning produce wrong results
+HIVE-21009: Adding ability for user to set bind user
+HIVE-22169: Tez: SplitGenerator tries to look for plan files which won't exist for Tez
+HIVE-22204: Beeline option to show/not show execution report
+HIVE-22106: Remove cross-query synchronization for the partition-eval
+HIVE-22168: Remove very expensive logging from the llap cache hotpath
+HIVE-22161: UDF: FunctionRegistry synchronizes on org.apache.hadoop.hive.ql.udf.UDFType class
+HIVE-22115: Prevent the creation of query routing appender if property is set to false
+HIVE-19661: switch Hive UDFs to use Re2J regex engine
+HIVE-21182: Skip setting up hive scratch dir during planning
+HIVE-21171: Skip creating scratch dirs for tez if RPC is on
+HIVE-22197: Common Merge join throwing class cast exception.
+HIVE-20987: Split the MiniDruid Cli tests into 3 different ones eg Druid_only, Druid_kakfa and kafka_only
+HIVE-22107: Correlated subquery producing wrong schema
+HIVE-22231: Hive query with big size via knox fails with Broken pipe Write failed
+HIVE-21866: LLAP status service driver may get stuck with wrong Yarn app ID
+HIVE-22243: Align Apache Thrift version to 0.9.3-1 in standalone-metastore as well
+HIVE-22221: Llap external client - Need to reduce LlapBaseInputFormat#getSplits
+HIVE-22241: Implement UDF to interpret date/timestamp using its internal representation and Gregorian-Julian hybrid calendar
+HIVE-21915: Hive with TEZ UNION ALL and UDTF results in data loss
+HIVE-21280: Null pointer exception on running compaction against a MM table.
+HIVE-15956: StackOverflowError when drop lots of partitions
+HIVE-21177: ACID: When there are no delete deltas skip finding min max keys
+HIVE-22099: Several date related UDFs can't handle Julian dates properly since HIVE-20007
+HIVE-21663: Support for object translation in HMS
+HIVE-22129: Remove glassfish.jersey and mssql-jdbc classes from jdbc-standalone jar
+HIVE-22068: Return the last event id dumped as repl status to avoid notification event missing error
+HIVE-22110: Initialize ReplChangeManager before starting actual dump

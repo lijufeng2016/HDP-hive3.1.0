@@ -1,0 +1,780 @@
+diff --git a/hbase-handler/src/test/results/positive/external_table_ppd.q.out b/hbase-handler/src/test/results/positive/external_table_ppd.q.out
+index 40abb423f8..139e35be86 100644
+--- a/hbase-handler/src/test/results/positive/external_table_ppd.q.out
++++ b/hbase-handler/src/test/results/positive/external_table_ppd.q.out
+@@ -60,7 +60,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"bigint_col\":\"true\",\"boolean_col\":\"true\",\"double_col\":\"true\",\"float_col\":\"true\",\"int_col\":\"true\",\"key\":\"true\",\"smallint_col\":\"true\",\"tinyint_col\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	external.table.purge	true                
+ 	hbase.table.default.storage.type	binary              
+ 	hbase.table.name    	t_hive              
+diff --git a/hbase-handler/src/test/results/positive/hbase_binary_storage_queries.q.out b/hbase-handler/src/test/results/positive/hbase_binary_storage_queries.q.out
+index bf1a89dbcc..1209c880f7 100644
+--- a/hbase-handler/src/test/results/positive/hbase_binary_storage_queries.q.out
++++ b/hbase-handler/src/test/results/positive/hbase_binary_storage_queries.q.out
+@@ -60,7 +60,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"bigint_col\":\"true\",\"boolean_col\":\"true\",\"double_col\":\"true\",\"float_col\":\"true\",\"int_col\":\"true\",\"key\":\"true\",\"smallint_col\":\"true\",\"tinyint_col\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	external.table.purge	true                
+ 	hbase.table.default.storage.type	binary              
+ 	hbase.table.name    	t_hive              
+@@ -243,7 +242,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"bigint_col\":\"true\",\"boolean_col\":\"true\",\"double_col\":\"true\",\"float_col\":\"true\",\"int_col\":\"true\",\"key\":\"true\",\"smallint_col\":\"true\",\"tinyint_col\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	hbase.table.name    	t_hive              
+ 	numFiles            	0                   
+ 	numRows             	0                   
+diff --git a/hbase-handler/src/test/results/positive/hbase_ddl.q.out b/hbase-handler/src/test/results/positive/hbase_ddl.q.out
+index 7adb474b0d..779ca4d16a 100644
+--- a/hbase-handler/src/test/results/positive/hbase_ddl.q.out
++++ b/hbase-handler/src/test/results/positive/hbase_ddl.q.out
+@@ -118,7 +118,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	external.table.purge	true                
+ 	hbase.mapred.output.outputtable	kkk                 
+ 	hbase.table.name    	hbase_table_0       
+@@ -168,7 +167,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	external.table.purge	true                
+ 	hbase.table.name    	hbase_table_0       
+ #### A masked pattern was here ####
+diff --git a/hbase-handler/src/test/results/positive/hbase_queries.q.out b/hbase-handler/src/test/results/positive/hbase_queries.q.out
+index 49865325b1..cfcfaf3274 100644
+--- a/hbase-handler/src/test/results/positive/hbase_queries.q.out
++++ b/hbase-handler/src/test/results/positive/hbase_queries.q.out
+@@ -989,7 +989,6 @@ WITH SERDEPROPERTIES (
+   'hbase.columns.mapping'='cf:string', 
+   'serialization.format'='1')
+ TBLPROPERTIES (
+-  'discover.partitions'='true', 
+   'hbase.table.name'='hbase_table_0', 
+ #### A masked pattern was here ####
+ PREHOOK: query: DROP TABLE IF EXISTS hbase_table_9
+diff --git a/hbase-handler/src/test/results/positive/hbasestats.q.out b/hbase-handler/src/test/results/positive/hbasestats.q.out
+index 812a74e22f..367b479556 100644
+--- a/hbase-handler/src/test/results/positive/hbasestats.q.out
++++ b/hbase-handler/src/test/results/positive/hbasestats.q.out
+@@ -42,7 +42,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"country\":\"true\",\"country_id\":\"true\",\"key\":\"true\",\"state\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	external.table.purge	true                
+ 	numFiles            	0                   
+ 	numRows             	0                   
+@@ -136,7 +135,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	external.table.purge	true                
+ #### A masked pattern was here ####
+ 	numFiles            	0                   
+@@ -204,7 +202,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	external.table.purge	true                
+ #### A masked pattern was here ####
+ 	numFiles            	0                   
+@@ -264,7 +261,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\"}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	external.table.purge	true                
+ #### A masked pattern was here ####
+ 	numFiles            	0                   
+@@ -375,7 +371,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	external.table.purge	true                
+ #### A masked pattern was here ####
+ 	numFiles            	0                   
+diff --git a/ql/src/test/queries/clientpositive/partition_discovery.q b/ql/src/test/queries/clientpositive/partition_discovery.q
+index 2f0ff87610..7af9664b20 100644
+--- a/ql/src/test/queries/clientpositive/partition_discovery.q
++++ b/ql/src/test/queries/clientpositive/partition_discovery.q
+@@ -71,6 +71,22 @@ MSCK REPAIR TABLE default.repairtable_n10;
+ show partitions default.repairtable_n10;
+ 
+ 
++CREATE EXTERNAL TABLE repairtable_n11 LIKE repairtable_n10;
++describe formatted repairtable_n11;
++
++ALTER TABLE repairtable_n10 SET TBLPROPERTIES('discover.partitions'='false');
++describe formatted repairtable_n10;
++
++-- tbl params are not retained by default
++CREATE EXTERNAL TABLE repairtable_n12 LIKE repairtable_n10;
++describe formatted repairtable_n12;
++
++set hive.ddl.createtablelike.properties.whitelist=discover.partitions;
++-- with tbl params retainer
++CREATE EXTERNAL TABLE repairtable_n13 LIKE repairtable_n10;
++describe formatted repairtable_n13;
++
++
+ DROP TABLE default.repairtable_n7;
+ DROP TABLE default.repairtable_n8;
+ DROP TABLE default.repairtable_n9;
+diff --git a/ql/src/test/results/clientpositive/create_like.q.out b/ql/src/test/results/clientpositive/create_like.q.out
+index 6d4e14a399..f4a5ed55a5 100644
+--- a/ql/src/test/results/clientpositive/create_like.q.out
++++ b/ql/src/test/results/clientpositive/create_like.q.out
+@@ -118,7 +118,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"a\":\"true\",\"b\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+-	discover.partitions 	true                
+ 	numFiles            	0                   
+ 	numRows             	0                   
+ 	rawDataSize         	0                   
+diff --git a/ql/src/test/results/clientpositive/create_like_view.q.out b/ql/src/test/results/clientpositive/create_like_view.q.out
+index 7e33e50af6..870f2800cf 100644
+--- a/ql/src/test/results/clientpositive/create_like_view.q.out
++++ b/ql/src/test/results/clientpositive/create_like_view.q.out
+@@ -172,7 +172,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"a\":\"true\",\"b\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	0                   
+ 	numRows             	0                   
+ 	rawDataSize         	0                   
+diff --git a/ql/src/test/results/clientpositive/default_file_format.q.out b/ql/src/test/results/clientpositive/default_file_format.q.out
+index beef4192c7..0adf5ae741 100644
+--- a/ql/src/test/results/clientpositive/default_file_format.q.out
++++ b/ql/src/test/results/clientpositive/default_file_format.q.out
+@@ -172,7 +172,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ #### A masked pattern was here ####
+ 	 	 
+ # Storage Information	 	 
+@@ -237,7 +236,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	0                   
+ 	totalSize           	0                   
+ #### A masked pattern was here ####
+@@ -474,7 +472,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	0                   
+ 	totalSize           	0                   
+ #### A masked pattern was here ####
+@@ -541,7 +538,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	0                   
+ 	totalSize           	0                   
+ #### A masked pattern was here ####
+diff --git a/ql/src/test/results/clientpositive/druid/druid_topn.q.out b/ql/src/test/results/clientpositive/druid/druid_topn.q.out
+index cc8da8ec1e..447cce11ce 100644
+--- a/ql/src/test/results/clientpositive/druid/druid_topn.q.out
++++ b/ql/src/test/results/clientpositive/druid/druid_topn.q.out
+@@ -42,7 +42,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"__time\":\"true\",\"added\":\"true\",\"anonymous\":\"true\",\"count\":\"true\",\"deleted\":\"true\",\"delta\":\"true\",\"language\":\"true\",\"namespace\":\"true\",\"newpage\":\"true\",\"page\":\"true\",\"robot\":\"true\",\"unpatrolled\":\"true\",\"user\":\"true\",\"variation\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	druid.datasource    	wikipedia           
+ 	numFiles            	0                   
+ 	numRows             	0                   
+diff --git a/ql/src/test/results/clientpositive/druid/druidkafkamini_basic.q.out b/ql/src/test/results/clientpositive/druid/druidkafkamini_basic.q.out
+index 7a17a387d2..5301644074 100644
+--- a/ql/src/test/results/clientpositive/druid/druidkafkamini_basic.q.out
++++ b/ql/src/test/results/clientpositive/druid/druidkafkamini_basic.q.out
+@@ -355,7 +355,6 @@ STAGE PLANS:
+                     columns __time,page,user,language,added,deleted
+                     columns.comments 
+                     columns.types timestamp:string:string:string:int:int
+-                    discover.partitions true
+                     druid.datasource default.druid_kafka_test
+                     druid.fieldNames language,user
+                     druid.fieldTypes string,string
+@@ -397,7 +396,6 @@ STAGE PLANS:
+                       columns __time,page,user,language,added,deleted
+                       columns.comments 
+                       columns.types timestamp:string:string:string:int:int
+-                      discover.partitions true
+                       druid.datasource default.druid_kafka_test
+                       druid.fieldNames language,user
+                       druid.fieldTypes string,string
+diff --git a/ql/src/test/results/clientpositive/druid/druidmini_expressions.q.out b/ql/src/test/results/clientpositive/druid/druidmini_expressions.q.out
+index 16ba235880..071a0f7739 100644
+--- a/ql/src/test/results/clientpositive/druid/druidmini_expressions.q.out
++++ b/ql/src/test/results/clientpositive/druid/druidmini_expressions.q.out
+@@ -246,7 +246,6 @@ STAGE PLANS:
+                     columns __time,cstring1,cstring2,cdouble,cfloat,ctinyint,csmallint,cint,cbigint,cboolean1,cboolean2
+                     columns.comments 
+                     columns.types timestamp with local time zone:string:string:double:float:tinyint:smallint:int:bigint:boolean:boolean
+-                    discover.partitions true
+                     druid.datasource default.druid_table_alltypesorc
+                     druid.fieldNames vc
+                     druid.fieldTypes int
+@@ -279,7 +278,6 @@ STAGE PLANS:
+                       columns __time,cstring1,cstring2,cdouble,cfloat,ctinyint,csmallint,cint,cbigint,cboolean1,cboolean2
+                       columns.comments 
+                       columns.types timestamp with local time zone:string:string:double:float:tinyint:smallint:int:bigint:boolean:boolean
+-                      discover.partitions true
+                       druid.datasource default.druid_table_alltypesorc
+                       druid.fieldNames vc
+                       druid.fieldTypes int
+diff --git a/ql/src/test/results/clientpositive/druid_topn.q.out b/ql/src/test/results/clientpositive/druid_topn.q.out
+index b0b435f5c0..8c078da688 100644
+--- a/ql/src/test/results/clientpositive/druid_topn.q.out
++++ b/ql/src/test/results/clientpositive/druid_topn.q.out
+@@ -42,7 +42,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"__time\":\"true\",\"added\":\"true\",\"anonymous\":\"true\",\"count\":\"true\",\"deleted\":\"true\",\"delta\":\"true\",\"language\":\"true\",\"namespace\":\"true\",\"newpage\":\"true\",\"page\":\"true\",\"robot\":\"true\",\"unpatrolled\":\"true\",\"user\":\"true\",\"variation\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	druid.datasource    	wikipedia           
+ 	numFiles            	0                   
+ 	numRows             	0                   
+diff --git a/ql/src/test/results/clientpositive/kafka/kafka_storage_handler.q.out b/ql/src/test/results/clientpositive/kafka/kafka_storage_handler.q.out
+index 2d6fab27cd..e9f9648f29 100644
+--- a/ql/src/test/results/clientpositive/kafka/kafka_storage_handler.q.out
++++ b/ql/src/test/results/clientpositive/kafka/kafka_storage_handler.q.out
+@@ -1193,7 +1193,6 @@ STAGE PLANS:
+                     columns isrobot,channel,timestamp,flags,isunpatrolled,page,diffurl,added,comment,commentlength,isnew,isminor,delta,isanonymous,user,deltabucket,deleted,namespace,__key,__partition,__offset,__timestamp
+                     columns.comments 'from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer'
+                     columns.types boolean:string:string:string:boolean:string:string:bigint:string:bigint:boolean:boolean:bigint:boolean:string:double:bigint:string:binary:int:bigint:bigint
+-                    discover.partitions true
+ #### A masked pattern was here ####
+                     hive.kafka.max.retries 6
+                     hive.kafka.metadata.poll.timeout.ms 30000
+@@ -1297,7 +1296,6 @@ STAGE PLANS:
+                       columns isrobot,channel,timestamp,flags,isunpatrolled,page,diffurl,added,comment,commentlength,isnew,isminor,delta,isanonymous,user,deltabucket,deleted,namespace,__key,__partition,__offset,__timestamp
+                       columns.comments 'from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer'
+                       columns.types boolean:string:string:string:boolean:string:string:bigint:string:bigint:boolean:boolean:bigint:boolean:string:double:bigint:string:binary:int:bigint:bigint
+-                      discover.partitions true
+ #### A masked pattern was here ####
+                       hive.kafka.max.retries 6
+                       hive.kafka.metadata.poll.timeout.ms 30000
+@@ -1518,7 +1516,6 @@ STAGE PLANS:
+                     columns isrobot,channel,timestamp,flags,isunpatrolled,page,diffurl,added,comment,commentlength,isnew,isminor,delta,isanonymous,user,deltabucket,deleted,namespace,__key,__partition,__offset,__timestamp
+                     columns.comments 'from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer'
+                     columns.types boolean:string:string:string:boolean:string:string:bigint:string:bigint:boolean:boolean:bigint:boolean:string:double:bigint:string:binary:int:bigint:bigint
+-                    discover.partitions true
+ #### A masked pattern was here ####
+                     hive.kafka.max.retries 6
+                     hive.kafka.metadata.poll.timeout.ms 30000
+@@ -1622,7 +1619,6 @@ STAGE PLANS:
+                       columns isrobot,channel,timestamp,flags,isunpatrolled,page,diffurl,added,comment,commentlength,isnew,isminor,delta,isanonymous,user,deltabucket,deleted,namespace,__key,__partition,__offset,__timestamp
+                       columns.comments 'from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer','from deserializer'
+                       columns.types boolean:string:string:string:boolean:string:string:bigint:string:bigint:boolean:boolean:bigint:boolean:string:double:bigint:string:binary:int:bigint:bigint
+-                      discover.partitions true
+ #### A masked pattern was here ####
+                       hive.kafka.max.retries 6
+                       hive.kafka.metadata.poll.timeout.ms 30000
+diff --git a/ql/src/test/results/clientpositive/llap/external_table_purge.q.out b/ql/src/test/results/clientpositive/llap/external_table_purge.q.out
+index 4e2f6a394a..5d91f8f4ac 100644
+--- a/ql/src/test/results/clientpositive/llap/external_table_purge.q.out
++++ b/ql/src/test/results/clientpositive/llap/external_table_purge.q.out
+@@ -119,7 +119,6 @@ LOCATION
+   'hdfs://### HDFS PATH ###'
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+   'external.table.purge'='false', 
+ #### A masked pattern was here ####
+ test.comment=Table should have data
+@@ -169,7 +168,6 @@ LOCATION
+   'hdfs://### HDFS PATH ###'
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+   'external.table.purge'='true', 
+ #### A masked pattern was here ####
+ test.comment=Table should have data
+diff --git a/ql/src/test/results/clientpositive/llap/mm_exim.q.out b/ql/src/test/results/clientpositive/llap/mm_exim.q.out
+index 868d107860..ee6cf06ea8 100644
+--- a/ql/src/test/results/clientpositive/llap/mm_exim.q.out
++++ b/ql/src/test/results/clientpositive/llap/mm_exim.q.out
+@@ -643,7 +643,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	3                   
+ 	numRows             	6                   
+ 	rawDataSize         	37                  
+diff --git a/ql/src/test/results/clientpositive/llap/strict_managed_tables2.q.out b/ql/src/test/results/clientpositive/llap/strict_managed_tables2.q.out
+index 348266c0a0..f3b6152cd6 100644
+--- a/ql/src/test/results/clientpositive/llap/strict_managed_tables2.q.out
++++ b/ql/src/test/results/clientpositive/llap/strict_managed_tables2.q.out
+@@ -49,7 +49,6 @@ LOCATION
+ #### A masked pattern was here ####
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: create table smt2_tab2 (c1 string, c2 string)
+ PREHOOK: type: CREATETABLE
+@@ -138,7 +137,6 @@ LOCATION
+ #### A masked pattern was here ####
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: create table smt2_tab5 (c1 string, c2 string)
+ PREHOOK: type: CREATETABLE
+diff --git a/ql/src/test/results/clientpositive/llap/whroot_external1.q.out b/ql/src/test/results/clientpositive/llap/whroot_external1.q.out
+index 4333bf43b6..cac158c926 100644
+--- a/ql/src/test/results/clientpositive/llap/whroot_external1.q.out
++++ b/ql/src/test/results/clientpositive/llap/whroot_external1.q.out
+@@ -72,7 +72,6 @@ LOCATION
+   'hdfs://### HDFS PATH ###'
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: insert into table wre1_ext1 select * from src where key < 5
+ PREHOOK: type: QUERY
+@@ -158,7 +157,6 @@ LOCATION
+   'hdfs://### HDFS PATH ###'
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: insert into table wre1_ext2 select * from src where key < 5
+ PREHOOK: type: QUERY
+@@ -248,7 +246,6 @@ LOCATION
+   'hdfs://### HDFS PATH ###'
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: insert into table wre1_db.wre1_ext3 select * from src where key < 5
+ PREHOOK: type: QUERY
+@@ -334,7 +331,6 @@ LOCATION
+   'hdfs://### HDFS PATH ###'
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: insert into table wre1_db.wre1_ext4 select * from src where key < 5
+ PREHOOK: type: QUERY
+@@ -417,7 +413,6 @@ OUTPUTFORMAT
+ LOCATION
+   'hdfs://### HDFS PATH ###'
+ TBLPROPERTIES (
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: insert into table wre1_ext5 select * from src where key < 5
+ PREHOOK: type: QUERY
+@@ -500,7 +495,6 @@ OUTPUTFORMAT
+ LOCATION
+   'hdfs://### HDFS PATH ###'
+ TBLPROPERTIES (
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: insert into table wre1_db.wre1_ext6 select * from src where key < 5
+ PREHOOK: type: QUERY
+diff --git a/ql/src/test/results/clientpositive/partition_discovery.q.out b/ql/src/test/results/clientpositive/partition_discovery.q.out
+index 907513639e..cddb6e56ba 100644
+--- a/ql/src/test/results/clientpositive/partition_discovery.q.out
++++ b/ql/src/test/results/clientpositive/partition_discovery.q.out
+@@ -323,6 +323,203 @@ POSTHOOK: type: SHOWPARTITIONS
+ POSTHOOK: Input: default@repairtable_n10
+ p1=a/p2=b
+ p1=c/p2=d
++PREHOOK: query: CREATE EXTERNAL TABLE repairtable_n11 LIKE repairtable_n10
++PREHOOK: type: CREATETABLE
++PREHOOK: Output: database:default
++PREHOOK: Output: default@repairtable_n11
++POSTHOOK: query: CREATE EXTERNAL TABLE repairtable_n11 LIKE repairtable_n10
++POSTHOOK: type: CREATETABLE
++POSTHOOK: Output: database:default
++POSTHOOK: Output: default@repairtable_n11
++PREHOOK: query: describe formatted repairtable_n11
++PREHOOK: type: DESCTABLE
++PREHOOK: Input: default@repairtable_n11
++POSTHOOK: query: describe formatted repairtable_n11
++POSTHOOK: type: DESCTABLE
++POSTHOOK: Input: default@repairtable_n11
++# col_name            	data_type           	comment             
++col                 	string              	                    
++	 	 
++# Partition Information	 	 
++# col_name            	data_type           	comment             
++p1                  	string              	                    
++p2                  	string              	                    
++	 	 
++# Detailed Table Information	 	 
++Database:           	default             	 
++#### A masked pattern was here ####
++Retention:          	0                   	 
++#### A masked pattern was here ####
++Table Type:         	EXTERNAL_TABLE      	 
++Table Parameters:	 	 
++	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\"}
++	EXTERNAL            	TRUE                
++	discover.partitions 	true                
++	numFiles            	0                   
++	numPartitions       	0                   
++	numRows             	0                   
++	rawDataSize         	0                   
++	totalSize           	0                   
++#### A masked pattern was here ####
++	 	 
++# Storage Information	 	 
++SerDe Library:      	org.apache.hadoop.hive.ql.io.orc.OrcSerde	 
++InputFormat:        	org.apache.hadoop.hive.ql.io.orc.OrcInputFormat	 
++OutputFormat:       	org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat	 
++Compressed:         	No                  	 
++Num Buckets:        	-1                  	 
++Bucket Columns:     	[]                  	 
++Sort Columns:       	[]                  	 
++Storage Desc Params:	 	 
++	serialization.format	1                   
++PREHOOK: query: ALTER TABLE repairtable_n10 SET TBLPROPERTIES('discover.partitions'='false')
++PREHOOK: type: ALTERTABLE_PROPERTIES
++PREHOOK: Input: default@repairtable_n10
++PREHOOK: Output: default@repairtable_n10
++POSTHOOK: query: ALTER TABLE repairtable_n10 SET TBLPROPERTIES('discover.partitions'='false')
++POSTHOOK: type: ALTERTABLE_PROPERTIES
++POSTHOOK: Input: default@repairtable_n10
++POSTHOOK: Output: default@repairtable_n10
++PREHOOK: query: describe formatted repairtable_n10
++PREHOOK: type: DESCTABLE
++PREHOOK: Input: default@repairtable_n10
++POSTHOOK: query: describe formatted repairtable_n10
++POSTHOOK: type: DESCTABLE
++POSTHOOK: Input: default@repairtable_n10
++# col_name            	data_type           	comment             
++col                 	string              	                    
++	 	 
++# Partition Information	 	 
++# col_name            	data_type           	comment             
++p1                  	string              	                    
++p2                  	string              	                    
++	 	 
++# Detailed Table Information	 	 
++Database:           	default             	 
++#### A masked pattern was here ####
++Retention:          	0                   	 
++#### A masked pattern was here ####
++Table Type:         	EXTERNAL_TABLE      	 
++Table Parameters:	 	 
++	EXTERNAL            	TRUE                
++	bucketing_version   	2                   
++	discover.partitions 	false               
++#### A masked pattern was here ####
++	numFiles            	2                   
++	numPartitions       	2                   
++	numRows             	0                   
++	rawDataSize         	0                   
++	totalSize           	0                   
++#### A masked pattern was here ####
++	 	 
++# Storage Information	 	 
++SerDe Library:      	org.apache.hadoop.hive.ql.io.orc.OrcSerde	 
++InputFormat:        	org.apache.hadoop.hive.ql.io.orc.OrcInputFormat	 
++OutputFormat:       	org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat	 
++Compressed:         	No                  	 
++Num Buckets:        	-1                  	 
++Bucket Columns:     	[]                  	 
++Sort Columns:       	[]                  	 
++Storage Desc Params:	 	 
++	serialization.format	1                   
++PREHOOK: query: CREATE EXTERNAL TABLE repairtable_n12 LIKE repairtable_n10
++PREHOOK: type: CREATETABLE
++PREHOOK: Output: database:default
++PREHOOK: Output: default@repairtable_n12
++POSTHOOK: query: CREATE EXTERNAL TABLE repairtable_n12 LIKE repairtable_n10
++POSTHOOK: type: CREATETABLE
++POSTHOOK: Output: database:default
++POSTHOOK: Output: default@repairtable_n12
++PREHOOK: query: describe formatted repairtable_n12
++PREHOOK: type: DESCTABLE
++PREHOOK: Input: default@repairtable_n12
++POSTHOOK: query: describe formatted repairtable_n12
++POSTHOOK: type: DESCTABLE
++POSTHOOK: Input: default@repairtable_n12
++# col_name            	data_type           	comment             
++col                 	string              	                    
++	 	 
++# Partition Information	 	 
++# col_name            	data_type           	comment             
++p1                  	string              	                    
++p2                  	string              	                    
++	 	 
++# Detailed Table Information	 	 
++Database:           	default             	 
++#### A masked pattern was here ####
++Retention:          	0                   	 
++#### A masked pattern was here ####
++Table Type:         	EXTERNAL_TABLE      	 
++Table Parameters:	 	 
++	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\"}
++	EXTERNAL            	TRUE                
++	discover.partitions 	true                
++	numFiles            	0                   
++	numPartitions       	0                   
++	numRows             	0                   
++	rawDataSize         	0                   
++	totalSize           	0                   
++#### A masked pattern was here ####
++	 	 
++# Storage Information	 	 
++SerDe Library:      	org.apache.hadoop.hive.ql.io.orc.OrcSerde	 
++InputFormat:        	org.apache.hadoop.hive.ql.io.orc.OrcInputFormat	 
++OutputFormat:       	org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat	 
++Compressed:         	No                  	 
++Num Buckets:        	-1                  	 
++Bucket Columns:     	[]                  	 
++Sort Columns:       	[]                  	 
++Storage Desc Params:	 	 
++	serialization.format	1                   
++PREHOOK: query: CREATE EXTERNAL TABLE repairtable_n13 LIKE repairtable_n10
++PREHOOK: type: CREATETABLE
++PREHOOK: Output: database:default
++PREHOOK: Output: default@repairtable_n13
++POSTHOOK: query: CREATE EXTERNAL TABLE repairtable_n13 LIKE repairtable_n10
++POSTHOOK: type: CREATETABLE
++POSTHOOK: Output: database:default
++POSTHOOK: Output: default@repairtable_n13
++PREHOOK: query: describe formatted repairtable_n13
++PREHOOK: type: DESCTABLE
++PREHOOK: Input: default@repairtable_n13
++POSTHOOK: query: describe formatted repairtable_n13
++POSTHOOK: type: DESCTABLE
++POSTHOOK: Input: default@repairtable_n13
++# col_name            	data_type           	comment             
++col                 	string              	                    
++	 	 
++# Partition Information	 	 
++# col_name            	data_type           	comment             
++p1                  	string              	                    
++p2                  	string              	                    
++	 	 
++# Detailed Table Information	 	 
++Database:           	default             	 
++#### A masked pattern was here ####
++Retention:          	0                   	 
++#### A masked pattern was here ####
++Table Type:         	EXTERNAL_TABLE      	 
++Table Parameters:	 	 
++	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\"}
++	EXTERNAL            	TRUE                
++	discover.partitions 	false               
++	numFiles            	0                   
++	numPartitions       	0                   
++	numRows             	0                   
++	rawDataSize         	0                   
++	totalSize           	0                   
++#### A masked pattern was here ####
++	 	 
++# Storage Information	 	 
++SerDe Library:      	org.apache.hadoop.hive.ql.io.orc.OrcSerde	 
++InputFormat:        	org.apache.hadoop.hive.ql.io.orc.OrcInputFormat	 
++OutputFormat:       	org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat	 
++Compressed:         	No                  	 
++Num Buckets:        	-1                  	 
++Bucket Columns:     	[]                  	 
++Sort Columns:       	[]                  	 
++Storage Desc Params:	 	 
++	serialization.format	1                   
+ PREHOOK: query: DROP TABLE default.repairtable_n7
+ PREHOOK: type: DROPTABLE
+ PREHOOK: Input: default@repairtable_n7
+diff --git a/ql/src/test/results/clientpositive/show_create_table_alter.q.out b/ql/src/test/results/clientpositive/show_create_table_alter.q.out
+index 9d93ee9739..2c75c36a20 100644
+--- a/ql/src/test/results/clientpositive/show_create_table_alter.q.out
++++ b/ql/src/test/results/clientpositive/show_create_table_alter.q.out
+@@ -32,7 +32,6 @@ LOCATION
+ #### A masked pattern was here ####
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: ALTER TABLE tmp_showcrt1_n1 SET TBLPROPERTIES ('comment'='temporary table', 'EXTERNAL'='FALSE')
+ PREHOOK: type: ALTERTABLE_PROPERTIES
+@@ -68,7 +67,6 @@ LOCATION
+ TBLPROPERTIES (
+   'EXTERNAL'='FALSE', 
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: ALTER TABLE tmp_showcrt1_n1 SET TBLPROPERTIES ('comment'='changed comment', 'EXTERNAL'='TRUE')
+ PREHOOK: type: ALTERTABLE_PROPERTIES
+@@ -103,7 +101,6 @@ LOCATION
+ #### A masked pattern was here ####
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: ALTER TABLE tmp_showcrt1_n1 SET TBLPROPERTIES ('SORTBUCKETCOLSPREFIX'='FALSE')
+ PREHOOK: type: ALTERTABLE_PROPERTIES
+@@ -138,7 +135,6 @@ LOCATION
+ #### A masked pattern was here ####
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: ALTER TABLE tmp_showcrt1_n1 SET TBLPROPERTIES ('storage_handler'='org.apache.hadoop.hive.ql.metadata.DefaultStorageHandler')
+ PREHOOK: type: ALTERTABLE_PROPERTIES
+@@ -173,7 +169,6 @@ LOCATION
+ #### A masked pattern was here ####
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: DROP TABLE tmp_showcrt1_n1
+ PREHOOK: type: DROPTABLE
+diff --git a/ql/src/test/results/clientpositive/show_create_table_serde.q.out b/ql/src/test/results/clientpositive/show_create_table_serde.q.out
+index a66c09a4d2..8b95c9b98e 100644
+--- a/ql/src/test/results/clientpositive/show_create_table_serde.q.out
++++ b/ql/src/test/results/clientpositive/show_create_table_serde.q.out
+@@ -174,7 +174,6 @@ LOCATION
+ #### A masked pattern was here ####
+ TBLPROPERTIES (
+   'bucketing_version'='2', 
+-  'discover.partitions'='true', 
+ #### A masked pattern was here ####
+ PREHOOK: query: DROP TABLE tmp_showcrt1_n0
+ PREHOOK: type: DROPTABLE
+diff --git a/ql/src/test/results/clientpositive/spark/stats_noscan_2.q.out b/ql/src/test/results/clientpositive/spark/stats_noscan_2.q.out
+index 90e8bcfc97..30a1ef91ee 100644
+--- a/ql/src/test/results/clientpositive/spark/stats_noscan_2.q.out
++++ b/ql/src/test/results/clientpositive/spark/stats_noscan_2.q.out
+@@ -49,7 +49,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\"}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	1                   
+ 	totalSize           	11                  
+ #### A masked pattern was here ####
+@@ -91,7 +90,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\"}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	1                   
+ 	numRows             	6                   
+ 	rawDataSize         	6                   
+diff --git a/ql/src/test/results/clientpositive/stats_noscan_2.q.out b/ql/src/test/results/clientpositive/stats_noscan_2.q.out
+index 4472c162e1..93f4c0e8ad 100644
+--- a/ql/src/test/results/clientpositive/stats_noscan_2.q.out
++++ b/ql/src/test/results/clientpositive/stats_noscan_2.q.out
+@@ -49,7 +49,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\"}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	1                   
+ 	totalSize           	11                  
+ #### A masked pattern was here ####
+@@ -91,7 +90,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\"}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	1                   
+ 	numRows             	6                   
+ 	rawDataSize         	6                   
+diff --git a/ql/src/test/results/clientpositive/temp_table_display_colstats_tbllvl.q.out b/ql/src/test/results/clientpositive/temp_table_display_colstats_tbllvl.q.out
+index 7dea708be1..f255177f3b 100644
+--- a/ql/src/test/results/clientpositive/temp_table_display_colstats_tbllvl.q.out
++++ b/ql/src/test/results/clientpositive/temp_table_display_colstats_tbllvl.q.out
+@@ -61,7 +61,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"adrevenue\":\"true\",\"avgtimeonsite\":\"true\",\"ccode\":\"true\",\"desturl\":\"true\",\"lcode\":\"true\",\"skeyword\":\"true\",\"sourceip\":\"true\",\"useragent\":\"true\",\"visitdate\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	0                   
+ 	numRows             	0                   
+ 	rawDataSize         	0                   
+@@ -112,7 +111,6 @@ Table Type:         	EXTERNAL_TABLE
+ Table Parameters:	 	 
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	1                   
+ 	numRows             	0                   
+ 	rawDataSize         	0                   
+@@ -271,7 +269,6 @@ STAGE PLANS:
+               columns sourceip,desturl,visitdate,adrevenue,useragent,ccode,lcode,skeyword,avgtimeonsite
+               columns.comments 
+               columns.types string:string:string:float:string:string:string:string:int
+-              discover.partitions true
+               field.delim |
+ #### A masked pattern was here ####
+               name default.uservisits_web_text_none
+@@ -294,7 +291,6 @@ STAGE PLANS:
+                 columns sourceip,desturl,visitdate,adrevenue,useragent,ccode,lcode,skeyword,avgtimeonsite
+                 columns.comments 
+                 columns.types string:string:string:float:string:string:string:string:int
+-                discover.partitions true
+                 field.delim |
+ #### A masked pattern was here ####
+                 name default.uservisits_web_text_none
+@@ -387,7 +383,6 @@ Table Parameters:
+ 	COLUMN_STATS_ACCURATE	{\"BASIC_STATS\":\"true\",\"COLUMN_STATS\":{\"adRevenue\":\"true\",\"avgTimeOnSite\":\"true\",\"sourceIP\":\"true\"}}
+ 	EXTERNAL            	TRUE                
+ 	bucketing_version   	2                   
+-	discover.partitions 	true                
+ 	numFiles            	1                   
+ 	numRows             	55                  
+ 	rawDataSize         	7005                
+diff --git a/standalone-metastore/metastore-server/src/main/java/org/apache/hadoop/hive/metastore/Msck.java b/standalone-metastore/metastore-server/src/main/java/org/apache/hadoop/hive/metastore/Msck.java
+index b7ae1d84d8..c2ba3b0cc1 100644
+--- a/standalone-metastore/metastore-server/src/main/java/org/apache/hadoop/hive/metastore/Msck.java
++++ b/standalone-metastore/metastore-server/src/main/java/org/apache/hadoop/hive/metastore/Msck.java
+@@ -110,9 +110,11 @@ public int repair(MsckInfo msckInfo) {
+     int ret = 0;
+     try {
+       Table table = getMsc().getTable(msckInfo.getCatalogName(), msckInfo.getDbName(), msckInfo.getTableName());
++      qualifiedTableName = Warehouse.getCatalogQualifiedTableName(table);
+       if (getConf().getBoolean(MetastoreConf.ConfVars.MSCK_REPAIR_ENABLE_PARTITION_RETENTION.getHiveName(), false)) {
+         msckInfo.setPartitionExpirySeconds(PartitionManagementTask.getRetentionPeriodInSeconds(table));
+-        LOG.info("Retention period ({}s) for partition is enabled for MSCK REPAIR..", msckInfo.getPartitionExpirySeconds());
++        LOG.info("{} - Retention period ({}s) for partition is enabled for MSCK REPAIR..",
++          qualifiedTableName, msckInfo.getPartitionExpirySeconds());
+       }
+       HiveMetaStoreChecker checker = new HiveMetaStoreChecker(getMsc(), getConf(), msckInfo.getPartitionExpirySeconds());
+       // checkMetastore call will fill in result with partitions that are present in filesystem
+@@ -129,13 +131,12 @@ public int repair(MsckInfo msckInfo) {
+       boolean lockRequired = totalPartsToFix > 0 &&
+         msckInfo.isRepairPartitions() &&
+         (msckInfo.isAddPartitions() || msckInfo.isDropPartitions());
+-      LOG.info("#partsNotInMs: {} #partsNotInFs: {} #expiredPartitions: {} lockRequired: {} (R: {} A: {} D: {})",
+-        partsNotInMs.size(), partsNotInFs.size(), expiredPartitions.size(), lockRequired,
++      LOG.info("{} - #partsNotInMs: {} #partsNotInFs: {} #expiredPartitions: {} lockRequired: {} (R: {} A: {} D: {})",
++        qualifiedTableName, partsNotInMs.size(), partsNotInFs.size(), expiredPartitions.size(), lockRequired,
+         msckInfo.isRepairPartitions(), msckInfo.isAddPartitions(), msckInfo.isDropPartitions());
+ 
+       if (msckInfo.isRepairPartitions()) {
+         // Repair metadata in HMS
+-        qualifiedTableName = Warehouse.getCatalogQualifiedTableName(table);
+         long lockId;
+         if (acquireLock && lockRequired && table.getParameters() != null &&
+           MetaStoreServerUtils.isTransactionalTable(table.getParameters())) {

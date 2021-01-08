@@ -481,6 +481,14 @@ public class MapJoinProcessor extends Transform {
   }
 
   /**
+   *
+   * @param condns
+   * @return et<Integer>
+   */
+  public static Set<Integer> getBigTableCandidates(JoinCondDesc[] condns) {
+    return getBigTableCandidates(condns,false);
+  }
+  /**
    * Get a list of big table candidates. Only the tables in the returned set can
    * be used as big table in the join operation.
    *
@@ -501,7 +509,7 @@ public class MapJoinProcessor extends Transform {
    * @param condns
    * @return set of big table candidates
    */
-  public static Set<Integer> getBigTableCandidates(JoinCondDesc[] condns) {
+  public static Set<Integer> getBigTableCandidates(JoinCondDesc[] condns, boolean isSupportFullOuter) {
     Set<Integer> bigTableCandidates = new HashSet<Integer>();
 
     boolean seenOuterJoin = false;
@@ -516,12 +524,14 @@ public class MapJoinProcessor extends Transform {
       seenPostitions.add(condn.getRight());
 
       if (joinType == JoinDesc.FULL_OUTER_JOIN) {
-        // setting these 2 parameters here just in case that if the code got
-        // changed in future, these 2 are not missing.
-        seenOuterJoin = true;
-        lastSeenRightOuterJoin = false;
-        // empty set - cannot convert
-        return new HashSet<Integer>();
+
+          if (!isSupportFullOuter) {
+              return new HashSet<Integer>();
+          }
+          // FULL OUTER MapJoin must be a single condition.
+          bigTableCandidates.add(condn.getLeft());
+          bigTableCandidates.add(condn.getRight());
+          return bigTableCandidates;
       } else if (joinType == JoinDesc.LEFT_OUTER_JOIN
           || joinType == JoinDesc.LEFT_SEMI_JOIN) {
         seenOuterJoin = true;

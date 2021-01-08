@@ -994,7 +994,7 @@ public class ConvertJoinMapJoin implements NodeProcessor {
       }
     }
     Set<Integer> bigTableCandidateSet =
-        MapJoinProcessor.getBigTableCandidates(joinOp.getConf().getConds(),true);
+        MapJoinProcessor.getBigTableCandidates(joinOp.getConf().getConds());
     int bigTablePosition = -1;
     // big input cumulative row count
     long bigInputCumulativeCardinality = -1L;

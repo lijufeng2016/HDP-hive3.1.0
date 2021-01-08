@@ -114,25 +114,29 @@ public class DefaultGraphWalker implements GraphWalker {
    */
   public void startWalking(Collection<Node> startNodes,
       HashMap<Node, Object> nodeOutput) throws SemanticException {
-    toWalk.addAll(startNodes);
-    while (toWalk.size() > 0) {
-      Node nd = toWalk.remove(0);
-      walk(nd);
-      // Some walkers extending DefaultGraphWalker e.g. ForwardWalker
-      // do not use opQueue and rely uniquely in the toWalk structure,
-      // thus we store the results produced by the dispatcher here
-      // TODO: rewriting the logic of those walkers to use opQueue
-      if (nodeOutput != null && getDispatchedList().contains(nd)) {
-        nodeOutput.put(nd, retMap.get(nd));
+    try {
+      toWalk.addAll(startNodes);
+      while (toWalk.size() > 0) {
+        Node nd = toWalk.remove(0);
+        walk(nd);
+        // Some walkers extending DefaultGraphWalker e.g. ForwardWalker
+        // do not use opQueue and rely uniquely in the toWalk structure,
+        // thus we store the results produced by the dispatcher here
+        // TODO: rewriting the logic of those walkers to use opQueue
+        if (nodeOutput != null && getDispatchedList().contains(nd)) {
+          nodeOutput.put(nd, retMap.get(nd));
+        }
       }
-    }
 
-    // Store the results produced by the dispatcher
-    while (!opQueue.isEmpty()) {
-      Node node = opQueue.poll();
-      if (nodeOutput != null && getDispatchedList().contains(node)) {
-        nodeOutput.put(node, retMap.get(node));
+      // Store the results produced by the dispatcher
+      while (!opQueue.isEmpty()) {
+        Node node = opQueue.poll();
+        if (nodeOutput != null && getDispatchedList().contains(node)) {
+          nodeOutput.put(node, retMap.get(node));
+        }
       }
+    }catch (Exception e){
+      e.printStackTrace();
     }
   }
 

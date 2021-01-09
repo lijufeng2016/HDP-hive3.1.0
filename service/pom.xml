@@ -257,13 +257,19 @@
       <groupId>org.apache.tez</groupId>
       <artifactId>tez-api</artifactId>
       <version>${tez.version}</version>
-      <scope>test</scope>
+      <scope>runtime</scope>
     </dependency>
+      <dependency>
+          <groupId>org.apache.tez</groupId>
+          <artifactId>tez-mapreduce</artifactId>
+          <version>${tez.version}</version>
+          <scope>runtime</scope>
+      </dependency>
     <dependency>
       <groupId>org.apache.tez</groupId>
       <artifactId>tez-runtime-library</artifactId>
       <version>${tez.version}</version>
-      <scope>test</scope>
+      <scope>runtime</scope>
         <exclusions>
           <exclusion>
             <groupId>org.slf4j</groupId>
@@ -279,7 +285,7 @@
       <groupId>org.apache.tez</groupId>
       <artifactId>tez-dag</artifactId>
       <version>${tez.version}</version>
-      <scope>test</scope>
+      <scope>runtime</scope>
         <exclusions>
              <exclusion>
             <groupId>org.slf4j</groupId>
@@ -345,6 +351,12 @@
         <includes>
           <include>hive-webapps/**</include>
         </includes>
+      </resource>
+      <resource>
+          <directory>../conf</directory>
+          <includes>
+              <include>*.*</include>
+          </includes>
       </resource>
     </resources>
     <plugins>

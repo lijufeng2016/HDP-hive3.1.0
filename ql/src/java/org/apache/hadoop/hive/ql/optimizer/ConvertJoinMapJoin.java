@@ -1514,6 +1514,9 @@ public class ConvertJoinMapJoin implements NodeProcessor {
       return false;
     }
     // Evaluate
+    if(position < -1){
+      return false;
+    }
     ReduceSinkOperator rsOp = (ReduceSinkOperator) joinOp.getParentOperators().get(position);
     Statistics inputStats = rsOp.getStatistics();
     long inputSize = computeOnlineDataSize(inputStats);

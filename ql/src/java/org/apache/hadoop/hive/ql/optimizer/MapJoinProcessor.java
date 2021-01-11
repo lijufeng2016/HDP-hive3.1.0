@@ -516,12 +516,7 @@ public class MapJoinProcessor extends Transform {
       seenPostitions.add(condn.getRight());
 
       if (joinType == JoinDesc.FULL_OUTER_JOIN) {
-        // setting these 2 parameters here just in case that if the code got
-        // changed in future, these 2 are not missing.
-        seenOuterJoin = true;
-        lastSeenRightOuterJoin = false;
-        // empty set - cannot convert
-        return new HashSet<Integer>();
+          return new HashSet<Integer>();
       } else if (joinType == JoinDesc.LEFT_OUTER_JOIN
           || joinType == JoinDesc.LEFT_SEMI_JOIN) {
         seenOuterJoin = true;

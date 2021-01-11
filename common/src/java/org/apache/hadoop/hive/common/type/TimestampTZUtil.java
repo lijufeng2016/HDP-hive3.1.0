@@ -43,6 +43,7 @@ public class TimestampTZUtil {
 
   private static final LocalTime DEFAULT_LOCAL_TIME = LocalTime.of(0, 0);
   private static final Pattern SINGLE_DIGIT_PATTERN = Pattern.compile("[\\+-]\\d:\\d\\d");
+  private static final ZoneOffset zoneOffset = ZoneOffset.systemDefault().getRules().getOffset(Instant.now());
 
   static final DateTimeFormatter FORMATTER;
   static {
@@ -157,7 +158,7 @@ public class TimestampTZUtil {
     // get [local time at toZone]
     LocalDateTime localDateTimeAtToZone = LocalDateTime.ofInstant(instant, toZone);
     // get nanos between [epoch at toZone] and [local time at toZone]
-    return Timestamp.ofEpochSecond(localDateTimeAtToZone.toEpochSecond(ZoneOffset.UTC),
+    return Timestamp.ofEpochSecond(localDateTimeAtToZone.toEpochSecond(zoneOffset),
         localDateTimeAtToZone.getNano());
   }
 }

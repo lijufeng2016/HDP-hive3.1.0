@@ -19,6 +19,7 @@ package org.apache.hadoop.hive.common.type;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -45,6 +46,7 @@ public class Timestamp implements Comparable<Timestamp> {
   private static final LocalDateTime EPOCH = LocalDateTime.of(1970, 1, 1, 0, 0, 0);
   private static final DateTimeFormatter PARSE_FORMATTER;
   private static final DateTimeFormatter PRINT_FORMATTER;
+  private static final ZoneOffset zoneOffset = ZoneOffset.systemDefault().getRules().getOffset(Instant.now());
 
   static {
     DateTimeFormatterBuilder builder = new DateTimeFormatterBuilder();
@@ -172,17 +174,17 @@ public class Timestamp implements Comparable<Timestamp> {
 
   public static Timestamp ofEpochSecond(long epochSecond, int nanos) {
     return new Timestamp(
-        LocalDateTime.ofEpochSecond(epochSecond, nanos, ZoneOffset.UTC));
+        LocalDateTime.ofEpochSecond(epochSecond, nanos, zoneOffset));
   }
 
   public static Timestamp ofEpochMilli(long epochMilli) {
     return new Timestamp(LocalDateTime
-        .ofInstant(Instant.ofEpochMilli(epochMilli), ZoneOffset.UTC));
+        .ofInstant(Instant.ofEpochMilli(epochMilli), zoneOffset.normalized()));
   }
 
   public static Timestamp ofEpochMilli(long epochMilli, int nanos) {
     return new Timestamp(LocalDateTime
-        .ofInstant(Instant.ofEpochMilli(epochMilli), ZoneOffset.UTC)
+        .ofInstant(Instant.ofEpochMilli(epochMilli), zoneOffset.normalized())
         .withNano(nanos));
   }
 

@@ -13,6 +13,7 @@
  */
 package org.apache.hadoop.hive.ql.io.parquet.timestamp;
 
+import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.util.Calendar;
@@ -34,6 +35,7 @@ public class NanoTimeUtils {
    static final long NANOS_PER_MINUTE = TimeUnit.MINUTES.toNanos(1);
    static final long NANOS_PER_SECOND = TimeUnit.SECONDS.toNanos(1);
    static final long NANOS_PER_DAY = TimeUnit.DAYS.toNanos(1);
+  private static final ZoneOffset zoneOffset = ZoneOffset.systemDefault().getRules().getOffset(Instant.now());
 
    private static final ThreadLocal<Calendar> parquetGMTCalendar = new ThreadLocal<Calendar>();
 
@@ -142,7 +144,7 @@ public class NanoTimeUtils {
      calendar.set(Calendar.SECOND, seconds);
 
      Timestamp ts = Timestamp.ofEpochMilli(calendar.getTimeInMillis(), (int) nanos);
-     ts = TimestampTZUtil.convertTimestampToZone(ts, ZoneOffset.UTC, timeZoneId);
+     ts = TimestampTZUtil.convertTimestampToZone(ts, zoneOffset, timeZoneId);
      return ts;
    }
 }

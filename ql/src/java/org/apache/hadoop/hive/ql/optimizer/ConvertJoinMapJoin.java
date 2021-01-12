@@ -1514,7 +1514,7 @@ public class ConvertJoinMapJoin implements NodeProcessor {
       return false;
     }
     // Evaluate
-    if(position < -1){
+    if(position < 0){
       return false;
     }
     ReduceSinkOperator rsOp = (ReduceSinkOperator) joinOp.getParentOperators().get(position);

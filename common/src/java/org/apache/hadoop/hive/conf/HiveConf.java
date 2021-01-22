@@ -2938,7 +2938,16 @@ public class HiveConf extends Configuration {
         "Do not include a starting \"|\" in the value. Using this regex instead\n" +
         "of updating the original regex means that you can append to the default\n" +
         "set by SQL standard authorization instead of replacing it entirely."),
+    HIVE_AUTHORIZATION_WRITELIST_MAPPING(
+            "hive.security.authorization.writelist.mapping", "",
+            "input like that:  ip1:user1|user2,ip2:user3|user4...."),
 
+    HIVE_AUTHORIZATION_BLACKLIST_MAPPING(
+            "hive.security.authorization.blacklist.mapping", "",
+            "input like that:  ip1:user1|user2 or ip2|ip3:user3|user4...."),
+    HIVE_AUTHORIZATION_NOCHECK_IPS(
+            "hive.security.authorization.nocheck.ips", "",
+            "seperated by ','"),
     HIVE_CLI_PRINT_HEADER("hive.cli.print.header", false, "Whether to print the names of the columns in query output."),
 
     HIVE_CLI_PRINT_ESCAPE_CRLF("hive.cli.print.escape.crlf", false,

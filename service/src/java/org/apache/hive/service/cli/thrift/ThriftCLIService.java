@@ -21,6 +21,7 @@ package org.apache.hive.service.cli.thrift;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.hive.common.util.HiveStringUtils;
 import org.apache.hive.service.rpc.thrift.TSetClientInfoReq;
 import org.apache.hive.service.rpc.thrift.TSetClientInfoResp;
 
@@ -471,7 +472,7 @@ public abstract class ThriftCLIService extends AbstractService implements TCLISe
         String ipAddress = getIpAddress();
         boolean allowRequest = ifAllowRequest(userName, ipAddress);
         if(!allowRequest){
-            throw new AccessControlException("you are not in white list,please contact administrator!ip : "+ipAddress+" ,username : "+userName);
+            throw new AccessControlException("你没有权限访问Hive，请联系管理员!ip : "+ipAddress+" ,username : "+userName);
         }
 
         TProtocolVersion protocol = getMinVersion(CLIService.SERVER_VERSION,
@@ -497,30 +498,23 @@ public abstract class ThriftCLIService extends AbstractService implements TCLISe
      * @return 是否允許
      */
     private boolean ifAllowRequest(String userName, String ipAddress) {
-        boolean result = false;
-         // 白名单的ip列表不验证,直接通過，优先级最高
-        String nocheckIps = hiveConf.getVar(ConfVars.HIVE_AUTHORIZATION_NOCHECK_IPS);
-        if (StringUtils.isNotBlank(nocheckIps)) {
-            String[] split = nocheckIps.split(",");
+        String whiteListMappings = hiveConf.getVar(ConfVars.HIVE_AUTHORIZATION_WHITELIST_MAPPING);
+        if(StringUtils.isNotBlank(whiteListMappings)){
+            String[] split = whiteListMappings.split(",");
             for (int i = 0; i < split.length; i++) {
-                String noCheckip = split[i];
-                String ipOrSeg = noCheckip.replace(".*", "");
-                if (ipAddress.startsWith(ipOrSeg) || ipAddress.equals(ipOrSeg)) {
+                String mapping = split[i];
+                String host = mapping.split(":")[0];
+                String user = mapping.split(":")[1];
+                boolean matcheHost = HiveStringUtils.matches(host, ipAddress);
+                boolean matcheUser = HiveStringUtils.matches(user, userName);
+                if(matcheHost && matcheUser){
                     return true;
+                }else {
+                    return false;
                 }
             }
         }
-        // 黑名单规则校验，优先级中等
-        String blackListMappings = hiveConf.getVar(ConfVars.HIVE_AUTHORIZATION_BLACKLIST_MAPPING);
-        result = getMatchResult(userName, ipAddress, blackListMappings, false);
-        // 只有没匹配到黑名单，再校验白名单
-        if(result){
-            // 白名单规则校验，优先级最低
-            String whiteListMappings = hiveConf.getVar(ConfVars.HIVE_AUTHORIZATION_WRITELIST_MAPPING);
-            result = getMatchResult(userName, ipAddress, whiteListMappings, true);
-        }
-
-        return result;
+        return false;
     }
 
     /**

@@ -509,8 +509,6 @@ public abstract class ThriftCLIService extends AbstractService implements TCLISe
                 boolean matcheUser = HiveStringUtils.matches(user, userName);
                 if(matcheHost && matcheUser){
                     return true;
-                }else {
-                    return false;
                 }
             }
         }

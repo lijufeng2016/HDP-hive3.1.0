@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.google.common.base.Splitter;
@@ -62,6 +63,47 @@ import org.apache.hadoop.io.Text;
 @InterfaceAudience.Private
 @InterfaceStability.Unstable
 public class HiveStringUtils {
+
+  /**
+   * 判断是否匹配，返回布尔值
+   * 说明:
+   *
+   * @param regex
+   * @param content
+   * @return
+   */
+  public static boolean matches(String regex, String content) {
+    if(regex.equals("*")){
+      regex = ".*";
+    }
+    Matcher matcher = matcher(regex, content);
+    boolean bool = matcher.matches();
+    return bool;
+  }
+
+  /**
+   * 返回一个mathcer
+   *
+   * @param regex
+   * @param content
+   * @return
+   */
+  public static Matcher matcher(String regex, String content) {
+    return compile(regex, true).matcher(content);
+  }
+  /**
+   * 编译一个正则表达式
+   *
+   * @param regex
+   * @return
+   */
+  public static Pattern compile(String regex, boolean isInsensitive) {
+    if (true == isInsensitive) {
+      return Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+    } else {
+      return Pattern.compile(regex);
+    }
+  }
 
   /**
    * Priority of the StringUtils shutdown hook.

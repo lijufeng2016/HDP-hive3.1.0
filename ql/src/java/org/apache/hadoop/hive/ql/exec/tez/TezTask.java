@@ -104,6 +104,7 @@ public class TezTask extends Task<TezWork> {
   private final PerfLogger perfLogger = SessionState.getPerfLogger();
   private static final String TEZ_MEMORY_RESERVE_FRACTION = "tez.task.scale.memory.reserve-fraction";
 
+  private static int retry = 4;
   private TezCounters counters;
 
   private final DagUtils utils;
@@ -219,8 +220,8 @@ public class TezTask extends Task<TezWork> {
           throw new HiveException("Operation cancelled");
         }
         DAGClient dagClient = submit(jobConf, dag, sessionRef);
-        session = sessionRef.value;
         boolean wasShutdown = false;
+        session = sessionRef.value;
         synchronized (dagClientLock) {
           assert this.dagClient == null;
           wasShutdown = this.isShutdown;
@@ -238,9 +239,50 @@ public class TezTask extends Task<TezWork> {
         rc = monitor.monitorExecution();
 
         if (rc != 0) {
-          this.setException(new HiveException(monitor.getDiagnostics()));
-        }
+            // 判断异常类型是否是oom，如果是，则调大内存重试3次
+            if (monitor.getDiagnostics().contains("Java heap space")) {
+                int containerSize = Integer.parseInt(SessionState.get().getConf().get(HiveConf.ConfVars.HIVETEZCONTAINERSIZE.varname));
+                console.printError("当前内存大小：" + containerSize);
+                for (int i = 1; i <= retry; i++) {
+                    console.printError("正在重试第 " + i + " 次");
+                    double pow = Math.pow(2, i);
+                    Double retryContainerSize = new Double(containerSize * pow);
+                    int intRetryContainerSize = retryContainerSize.intValue();
+                    console.printError("内存大小hive.tez.container.size自动设为 " + intRetryContainerSize);
+                    SessionState.get().getConf().setVar(HiveConf.ConfVars.HIVETEZCONTAINERSIZE, intRetryContainerSize + "");
+                    conf.setVar(HiveConf.ConfVars.HIVETEZCONTAINERSIZE, intRetryContainerSize + "");
 
+                    DAGClient retryDagClient = submit(jobConf, dag, sessionRef);
+                    boolean retryWasShutdown = false;
+                    session = sessionRef.value;
+                    synchronized (dagClientLock) {
+                        assert this.dagClient == null;
+                        retryWasShutdown = this.isShutdown;
+                        if (!retryWasShutdown) {
+                            this.dagClient = dagClient;
+                        }
+                    }
+                    if (retryWasShutdown) {
+                        closeDagClientOnCancellation(dagClient);
+                        throw new HiveException("Operation cancelled");
+                    }
+                    // finally monitor will print progress until the job is done
+                    TezJobMonitor retryMonitor = new TezJobMonitor(work.getAllWork(), retryDagClient, conf, dag, ctx);
+                    rc = retryMonitor.monitorExecution();
+                    if (rc == 0) {
+                        console.printError("重试成功!！参数为：set hive.tez.container.size=" + intRetryContainerSize + ";");
+                        break;
+                    }
+                    //重试retry次依然失败
+                    if (rc != 0 && i == retry) {
+                        console.printError("重试" + retry + "次失败！当前引擎为tez，请切换hive执行引擎。如：set hive.execution.engine=mr;");
+                    }
+                }
+            }
+          }
+          if(rc != 0){
+            this.setException(new HiveException(monitor.getDiagnostics()));
+          }
         // fetch the counters
         try {
           Set<StatusGetOpts> statusGetOpts = EnumSet.of(StatusGetOpts.GET_COUNTERS);

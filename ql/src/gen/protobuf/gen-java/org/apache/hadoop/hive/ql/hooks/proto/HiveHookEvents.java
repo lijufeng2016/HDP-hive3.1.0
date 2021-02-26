@@ -42,7 +42,7 @@ public final class HiveHookEvents {
         getValueBytes();
   }
   /**
-   * Protobuf type {@code MapFieldEntry}
+   * Protobuf type {@code org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry}
    */
   public static final class MapFieldEntry extends
       com.google.protobuf.GeneratedMessage
@@ -116,12 +116,12 @@ public final class HiveHookEvents {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_MapFieldEntry_descriptor;
+      return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_MapFieldEntry_fieldAccessorTable
+      return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.class, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder.class);
     }
@@ -346,19 +346,19 @@ public final class HiveHookEvents {
       return builder;
     }
     /**
-     * Protobuf type {@code MapFieldEntry}
+     * Protobuf type {@code org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntryOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_MapFieldEntry_descriptor;
+        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_MapFieldEntry_fieldAccessorTable
+        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.class, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder.class);
       }
@@ -396,7 +396,7 @@ public final class HiveHookEvents {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_MapFieldEntry_descriptor;
+        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_descriptor;
       }
 
       public org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry getDefaultInstanceForType() {
@@ -624,7 +624,7 @@ public final class HiveHookEvents {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:MapFieldEntry)
+      // @@protoc_insertion_point(builder_scope:org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry)
     }
 
     static {
@@ -632,7 +632,7 @@ public final class HiveHookEvents {
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:MapFieldEntry)
+    // @@protoc_insertion_point(class_scope:org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry)
   }
 
   public interface HiveHookEventProtoOrBuilder
@@ -793,33 +793,33 @@ public final class HiveHookEvents {
     com.google.protobuf.ByteString
         getTablesReadBytes(int index);
 
-    // repeated .MapFieldEntry otherInfo = 50;
+    // repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     java.util.List<org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry> 
         getOtherInfoList();
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry getOtherInfo(int index);
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     int getOtherInfoCount();
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     java.util.List<? extends org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntryOrBuilder> 
         getOtherInfoOrBuilderList();
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntryOrBuilder getOtherInfoOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code HiveHookEventProto}
+   * Protobuf type {@code org.apache.hadoop.hive.ql.hooks.proto.HiveHookEventProto}
    */
   public static final class HiveHookEventProto extends
       com.google.protobuf.GeneratedMessage
@@ -956,12 +956,12 @@ public final class HiveHookEvents {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_HiveHookEventProto_descriptor;
+      return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_HiveHookEventProto_fieldAccessorTable
+      return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.HiveHookEventProto.class, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.HiveHookEventProto.Builder.class);
     }
@@ -1359,36 +1359,36 @@ public final class HiveHookEvents {
       return tablesRead_.getByteString(index);
     }
 
-    // repeated .MapFieldEntry otherInfo = 50;
+    // repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;
     public static final int OTHERINFO_FIELD_NUMBER = 50;
     private java.util.List<org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry> otherInfo_;
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     public java.util.List<org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry> getOtherInfoList() {
       return otherInfo_;
     }
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     public java.util.List<? extends org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntryOrBuilder> 
         getOtherInfoOrBuilderList() {
       return otherInfo_;
     }
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     public int getOtherInfoCount() {
       return otherInfo_.size();
     }
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     public org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry getOtherInfo(int index) {
       return otherInfo_.get(index);
     }
     /**
-     * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+     * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
      */
     public org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntryOrBuilder getOtherInfoOrBuilder(
         int index) {
@@ -1595,19 +1595,19 @@ public final class HiveHookEvents {
       return builder;
     }
     /**
-     * Protobuf type {@code HiveHookEventProto}
+     * Protobuf type {@code org.apache.hadoop.hive.ql.hooks.proto.HiveHookEventProto}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.HiveHookEventProtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_HiveHookEventProto_descriptor;
+        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_HiveHookEventProto_fieldAccessorTable
+        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.HiveHookEventProto.class, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.HiveHookEventProto.Builder.class);
       }
@@ -1668,7 +1668,7 @@ public final class HiveHookEvents {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_HiveHookEventProto_descriptor;
+        return org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_descriptor;
       }
 
       public org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.HiveHookEventProto getDefaultInstanceForType() {
@@ -2604,7 +2604,7 @@ public final class HiveHookEvents {
         return this;
       }
 
-      // repeated .MapFieldEntry otherInfo = 50;
+      // repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;
       private java.util.List<org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry> otherInfo_ =
         java.util.Collections.emptyList();
       private void ensureOtherInfoIsMutable() {
@@ -2618,7 +2618,7 @@ public final class HiveHookEvents {
           org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntryOrBuilder> otherInfoBuilder_;
 
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public java.util.List<org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry> getOtherInfoList() {
         if (otherInfoBuilder_ == null) {
@@ -2628,7 +2628,7 @@ public final class HiveHookEvents {
         }
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public int getOtherInfoCount() {
         if (otherInfoBuilder_ == null) {
@@ -2638,7 +2638,7 @@ public final class HiveHookEvents {
         }
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry getOtherInfo(int index) {
         if (otherInfoBuilder_ == null) {
@@ -2648,7 +2648,7 @@ public final class HiveHookEvents {
         }
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public Builder setOtherInfo(
           int index, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry value) {
@@ -2665,7 +2665,7 @@ public final class HiveHookEvents {
         return this;
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public Builder setOtherInfo(
           int index, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder builderForValue) {
@@ -2679,7 +2679,7 @@ public final class HiveHookEvents {
         return this;
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public Builder addOtherInfo(org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry value) {
         if (otherInfoBuilder_ == null) {
@@ -2695,7 +2695,7 @@ public final class HiveHookEvents {
         return this;
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public Builder addOtherInfo(
           int index, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry value) {
@@ -2712,7 +2712,7 @@ public final class HiveHookEvents {
         return this;
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public Builder addOtherInfo(
           org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder builderForValue) {
@@ -2726,7 +2726,7 @@ public final class HiveHookEvents {
         return this;
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public Builder addOtherInfo(
           int index, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder builderForValue) {
@@ -2740,7 +2740,7 @@ public final class HiveHookEvents {
         return this;
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public Builder addAllOtherInfo(
           java.lang.Iterable<? extends org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry> values) {
@@ -2754,7 +2754,7 @@ public final class HiveHookEvents {
         return this;
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public Builder clearOtherInfo() {
         if (otherInfoBuilder_ == null) {
@@ -2767,7 +2767,7 @@ public final class HiveHookEvents {
         return this;
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public Builder removeOtherInfo(int index) {
         if (otherInfoBuilder_ == null) {
@@ -2780,14 +2780,14 @@ public final class HiveHookEvents {
         return this;
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder getOtherInfoBuilder(
           int index) {
         return getOtherInfoFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntryOrBuilder getOtherInfoOrBuilder(
           int index) {
@@ -2797,7 +2797,7 @@ public final class HiveHookEvents {
         }
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public java.util.List<? extends org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntryOrBuilder> 
            getOtherInfoOrBuilderList() {
@@ -2808,14 +2808,14 @@ public final class HiveHookEvents {
         }
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder addOtherInfoBuilder() {
         return getOtherInfoFieldBuilder().addBuilder(
             org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder addOtherInfoBuilder(
           int index) {
@@ -2823,7 +2823,7 @@ public final class HiveHookEvents {
             index, org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .MapFieldEntry otherInfo = 50;</code>
+       * <code>repeated .org.apache.hadoop.hive.ql.hooks.proto.MapFieldEntry otherInfo = 50;</code>
        */
       public java.util.List<org.apache.hadoop.hive.ql.hooks.proto.HiveHookEvents.MapFieldEntry.Builder> 
            getOtherInfoBuilderList() {
@@ -2844,7 +2844,7 @@ public final class HiveHookEvents {
         return otherInfoBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:HiveHookEventProto)
+      // @@protoc_insertion_point(builder_scope:org.apache.hadoop.hive.ql.hooks.proto.HiveHookEventProto)
     }
 
     static {
@@ -2852,19 +2852,19 @@ public final class HiveHookEvents {
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:HiveHookEventProto)
+    // @@protoc_insertion_point(class_scope:org.apache.hadoop.hive.ql.hooks.proto.HiveHookEventProto)
   }
 
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_MapFieldEntry_descriptor;
+    internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_MapFieldEntry_fieldAccessorTable;
+      internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_HiveHookEventProto_descriptor;
+    internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_HiveHookEventProto_fieldAccessorTable;
+      internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2874,33 +2874,35 @@ public final class HiveHookEvents {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020HiveEvents.proto\"+\n\rMapFieldEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\373\001\n\022HiveHookEven" +
-      "tProto\022\021\n\teventType\030\001 \001(\t\022\023\n\013hiveQueryId" +
-      "\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\022\025\n\rexecutionMo" +
-      "de\030\004 \001(\t\022\023\n\013requestUser\030\005 \001(\t\022\r\n\005queue\030\006" +
-      " \001(\t\022\014\n\004user\030\007 \001(\t\022\023\n\013operationId\030\010 \001(\t\022" +
-      "\025\n\rtablesWritten\030\t \003(\t\022\022\n\ntablesRead\030\n \003" +
-      "(\t\022!\n\totherInfo\0302 \003(\0132\016.MapFieldEntryB7\n" +
-      "%org.apache.hadoop.hive.ql.hooks.protoB\016" +
-      "HiveHookEvents"
+      "\n\020HiveEvents.proto\022%org.apache.hadoop.hi" +
+      "ve.ql.hooks.proto\"+\n\rMapFieldEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\241\002\n\022HiveHookEvent" +
+      "Proto\022\021\n\teventType\030\001 \001(\t\022\023\n\013hiveQueryId\030" +
+      "\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\003\022\025\n\rexecutionMod" +
+      "e\030\004 \001(\t\022\023\n\013requestUser\030\005 \001(\t\022\r\n\005queue\030\006 " +
+      "\001(\t\022\014\n\004user\030\007 \001(\t\022\023\n\013operationId\030\010 \001(\t\022\025" +
+      "\n\rtablesWritten\030\t \003(\t\022\022\n\ntablesRead\030\n \003(" +
+      "\t\022G\n\totherInfo\0302 \003(\01324.org.apache.hadoop" +
+      ".hive.ql.hooks.proto.MapFieldEntryB7\n%or",
+      "g.apache.hadoop.hive.ql.hooks.protoB\016Hiv" +
+      "eHookEvents"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_MapFieldEntry_descriptor =
+          internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_descriptor =
             getDescriptor().getMessageTypes().get(0);
-          internal_static_MapFieldEntry_fieldAccessorTable = new
+          internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_MapFieldEntry_descriptor,
+              internal_static_org_apache_hadoop_hive_ql_hooks_proto_MapFieldEntry_descriptor,
               new java.lang.String[] { "Key", "Value", });
-          internal_static_HiveHookEventProto_descriptor =
+          internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_descriptor =
             getDescriptor().getMessageTypes().get(1);
-          internal_static_HiveHookEventProto_fieldAccessorTable = new
+          internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_HiveHookEventProto_descriptor,
+              internal_static_org_apache_hadoop_hive_ql_hooks_proto_HiveHookEventProto_descriptor,
               new java.lang.String[] { "EventType", "HiveQueryId", "Timestamp", "ExecutionMode", "RequestUser", "Queue", "User", "OperationId", "TablesWritten", "TablesRead", "OtherInfo", });
           return null;
         }

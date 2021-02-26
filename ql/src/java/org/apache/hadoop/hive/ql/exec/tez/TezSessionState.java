@@ -298,7 +298,8 @@ public class TezSessionState {
   private TezClient createTezClientObject(TezConfiguration tezConfig,
       Map<String, LocalResource> commonLocalResources,
       Credentials llapCredentials, ServicePluginsDescriptor spd) {
-    return TezClient.newBuilder("HIVE-" + sessionId, tezConfig).setIsSession(true)
+      String appName = tezConfig.get("tez.job.name", "HIVE-" + sessionId );
+    return TezClient.newBuilder(appName, tezConfig).setIsSession(true)
         .setLocalResources(commonLocalResources).setCredentials(llapCredentials)
         .setServicePluginDescriptor(spd).build();
   }

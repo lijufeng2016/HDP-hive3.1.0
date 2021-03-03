@@ -1,3 +1,4 @@
+本人独立维护的hive版本，基于HDP3.1.0版本
 Apache Hive (TM)
 ================
 [![Master Build Status](https://travis-ci.org/apache/hive.svg?branch=master)](https://travis-ci.org/apache/hive/branches)

@@ -37,49 +37,6 @@
      <name>hive.metastore.uris</name>
      <value>thrift://bdc-test02:9083</value>
 </property>
-<property>
-    <name>hive.zookeeper.quorum</name>
-    <value>bdc-test01:2181,bdc-test02:2181,bdc-test03:2181</value>
-</property>
-<property>
-    <name>hive.zookeeper.userpassword.namespace</name>
-    <value>user_hive</value>
-</property>
-<property>
-    <name>hive.server2.authentication.ldap.url</name>
-    <value>ldap://121.41.123.11:389</value>
-</property>
-<property>
-    <name>hive.server2.authentication.ldap.baseDN</name>
-    <value>DC=ichangtou,DC=cn</value>
-</property>
-<property>
-    <name>hive.server2.authentication.ldap.binddn</name>
-    <value>cn=jumpserver,cn=Users,dc=ichangtou,dc=cn</value>
-</property>
-<property>
-    <name>hive.server2.authentication.ldap.bindpw</name>
-    <value>urEwi20EeI</value>
-</property>
-
-<property>
-    <name>hive.server2.authentication.ldap.guidKey</name>
-    <value>sAMAccountName</value>
-</property>
-
-
-<property>
-    <name>hive.server2.authentication.ldap.userMembershipKey</name>
-    <value>member</value>
-</property>
-<property>
-    <name>hive.server2.authentication.ldap.groupClassKey</name>
-    <value>group</value>
-</property>
-<property>
-    <name>hive.server2.authentication.ldap.groupDNPattern</name>
-    <value>DC=ichangtou,DC=cn</value>
-</property>
 
 </configuration>
 

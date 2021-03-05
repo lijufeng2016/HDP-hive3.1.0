@@ -608,11 +608,11 @@ public class HiveConf extends Configuration {
         "String used as a file extension for output files. \n" +
         "If not set, defaults to the codec extension for text files (e.g. \".gz\"), or no extension otherwise."),
 
-    HIVE_IN_TEST("hive.in.test", false, "internal usage only, true in test mode", true),
-    HIVE_IN_TEST_SSL("hive.in.ssl.test", false, "internal usage only, true in SSL test mode", true),
+    HIVE_IN_TEST("hive.in.test", true, "internal usage only, true in test mode", true),
+    HIVE_IN_TEST_SSL("hive.in.ssl.test", true, "internal usage only, true in SSL test mode", true),
     // TODO: this needs to be removed; see TestReplicationScenarios* comments.
-    HIVE_IN_TEST_REPL("hive.in.repl.test", false, "internal usage only, true in replication test mode", true),
-    HIVE_IN_TEST_IDE("hive.in.ide.test", false, "internal usage only, true if test running in ide",
+    HIVE_IN_TEST_REPL("hive.in.repl.test", true, "internal usage only, true in replication test mode", true),
+    HIVE_IN_TEST_IDE("hive.in.ide.test", true, "internal usage only, true if test running in ide",
         true),
     HIVE_TESTING_SHORT_LOGS("hive.testing.short.logs", false,
         "internal usage only, used only in test mode. If set true, when requesting the " +
@@ -3635,7 +3635,7 @@ public class HiveConf extends Configuration {
     HIVE_JAR_DIRECTORY("hive.jar.directory", null,
         "This is the location hive in tez mode will look for to find a site wide \n" +
         "installed hive instance."),
-    HIVE_USER_INSTALL_DIR("hive.user.install.directory", "/user/",
+    HIVE_USER_INSTALL_DIR("hive.user.install.directory", "/home/lijufeng/software/apache-hive-3.1.0.3.1.5.152-1-bin",
         "If hive (in tez mode only) cannot find a usable hive jar in \"hive.jar.directory\", \n" +
         "it will upload the hive jar to \"hive.user.install.directory/user.name\"\n" +
         "and use it to run queries."),

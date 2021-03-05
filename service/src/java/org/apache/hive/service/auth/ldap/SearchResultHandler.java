@@ -22,6 +22,7 @@ import java.util.Collection;
 import java.util.List;
 import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
+import javax.naming.PartialResultException;
 import javax.naming.directory.Attribute;
 import javax.naming.directory.SearchResult;
 import org.slf4j.Logger;
@@ -129,7 +130,9 @@ public final class SearchResultHandler {
           }
         }
       }
-    } finally {
+    }
+    catch (PartialResultException e){
+    }finally {
       for (NamingEnumeration<SearchResult> searchResult : searchResults) {
         try {
           searchResult.close();

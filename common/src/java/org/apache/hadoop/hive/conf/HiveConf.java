@@ -2541,6 +2541,9 @@ public class HiveConf extends Configuration {
         "Initial amount of time (in milliseconds) to wait between retries\n" +
         "when connecting to the ZooKeeper server when using ExponentialBackoffRetry policy."),
 
+    HIVE_ZOOKEEPER_USERPASSWORD_NAMESPACE("hive.zookeeper.userpassword.namespace", "user_hive",
+            "The namespace to store username and password in zk"),
+
     // Transactions
     HIVE_TXN_MANAGER("hive.txn.manager",
         "org.apache.hadoop.hive.ql.lockmgr.DummyTxnManager",

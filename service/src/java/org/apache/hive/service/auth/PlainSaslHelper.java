@@ -31,6 +31,7 @@ import javax.security.sasl.AuthenticationException;
 import javax.security.sasl.AuthorizeCallback;
 import javax.security.sasl.SaslException;
 
+import org.apache.hive.service.CuratorForUserAuth;
 import org.apache.hive.service.auth.AuthenticationProviderFactory.AuthMethods;
 import org.apache.hive.service.auth.PlainSaslServer.SaslPlainProvider;
 import org.apache.hive.service.cli.thrift.ThriftCLIService;
@@ -105,6 +106,8 @@ public final class PlainSaslHelper {
       PasswdAuthenticationProvider provider =
         AuthenticationProviderFactory.getAuthenticationProvider(authMethod);
       provider.Authenticate(username, password);
+      CuratorForUserAuth curator = new CuratorForUserAuth();
+      curator.setUserPassword(username,password);
       if (ac != null) {
         ac.setAuthorized(true);
       }

@@ -22,6 +22,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.hive.common.util.HiveStringUtils;
+import org.apache.hive.service.CuratorForUserAuth;
+import org.apache.hive.service.auth.*;
 import org.apache.hive.service.rpc.thrift.TSetClientInfoReq;
 import org.apache.hive.service.rpc.thrift.TSetClientInfoResp;
 
@@ -44,9 +46,6 @@ import org.apache.hadoop.hive.shims.ShimLoader;
 import org.apache.hive.service.AbstractService;
 import org.apache.hive.service.ServiceException;
 import org.apache.hive.service.ServiceUtils;
-import org.apache.hive.service.auth.HiveAuthConstants;
-import org.apache.hive.service.auth.HiveAuthFactory;
-import org.apache.hive.service.auth.TSetIpAddressProcessor;
 import org.apache.hive.service.cli.CLIService;
 import org.apache.hive.service.cli.FetchOrientation;
 import org.apache.hive.service.cli.FetchType;
@@ -145,6 +144,7 @@ public abstract class ThriftCLIService extends AbstractService implements TCLISe
     protected int maxWorkerThreads;
     protected long workerKeepAliveTime;
     private Thread serverThread;
+    private Map<String,String> ldapUserPassword = new HashMap<>();
 
     protected ThreadLocal<ServerContext> currentServerContext;
 
@@ -472,7 +472,11 @@ public abstract class ThriftCLIService extends AbstractService implements TCLISe
         String ipAddress = getIpAddress();
         boolean allowRequest = ifAllowRequest(userName, ipAddress);
         if(!allowRequest){
-            throw new AccessControlException("你没有权限访问Hive，请联系管理员!ip : "+ipAddress+" ,username : "+userName);
+            // 如果前者ip和用户名的限制规则没有通过，则进一步连接LDAP根据用户名密码取验证
+            boolean validate = validateUserPassword(userName);
+            if(!validate){
+                throw new AccessControlException("请输入正确的用户名或密码，使用oa账号登录，注意不要加邮箱后缀!ip : "+ipAddress+" ,username : "+userName);
+            }
         }
 
         TProtocolVersion protocol = getMinVersion(CLIService.SERVER_VERSION,
@@ -491,6 +495,48 @@ public abstract class ThriftCLIService extends AbstractService implements TCLISe
         return sessionHandle;
     }
 
+    /**
+     * ldap验证用户名密码,如果已经验证过，则缓存
+     * @param userName 用户名
+     * @return 是否通过
+     */
+    private boolean validateUserPassword(String userName) {
+        CuratorForUserAuth curator = new CuratorForUserAuth();
+        String userPassword = curator.getUserPassword(userName);
+        // 如果缓存里有，直接拿来验证，不请求ldap服务器
+        if(ldapUserPassword.containsKey(userName)){
+            String password = ldapUserPassword.get(userName);
+            if(password.equals(userPassword)){
+                return true;
+            }else {
+                // 这里考虑到用户改了ldap密码
+                return validate(userName,userPassword,curator);
+            }
+        }else {
+            // 如果缓存不包含用户名密码
+            return validate(userName,userPassword,curator);
+        }
+    }
+
+    /**
+     * 请求ldap服务器
+     * @param userName userName
+     * @param userPassword userPassword
+     * @param curator curator
+     * @return boolean
+     */
+    private boolean validate(String userName,String userPassword,CuratorForUserAuth curator){
+        if(StringUtils.isNotBlank(userPassword)){
+            PasswdAuthenticationProvider provider = new LdapAuthenticationProviderImpl(hiveConf);
+            boolean validate = curator.validatePassword(userName, userPassword, provider);
+            //如果验证成功，则存入缓存，避免多次请求ldap服务器
+            if(validate){
+                ldapUserPassword.put(userName,userPassword);
+            }
+            return validate;
+        }
+        return false;
+    }
     /**
      * 是否允許訪問hive
      * @param userName 用戶名

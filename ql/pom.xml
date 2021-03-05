@@ -312,7 +312,7 @@
       <groupId>com.lmax</groupId>
       <artifactId>disruptor</artifactId>
       <version>${disruptor.version}</version>
-      <scope>test</scope>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.codehaus.groovy</groupId>
@@ -640,7 +640,7 @@
       <artifactId>tez-dag</artifactId>
       <version>${tez.version}</version>
       <optional>true</optional>
-      <scope>test</scope>
+      <scope>runtime</scope>
       <exclusions>
            <exclusion>
           <groupId>org.mortbay.jetty</groupId>
